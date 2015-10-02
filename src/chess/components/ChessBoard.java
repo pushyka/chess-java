@@ -5,7 +5,8 @@ import chess.components.BoardSquare;
 /**
  * Created by Gareth on 02-Oct-15.
  */
-public class ChessBoard {
+public class ChessBoard implements Viewable
+{
 
     private BoardSquare[][] board;
     private char player;
@@ -32,7 +33,7 @@ public class ChessBoard {
         // black row 3 (pawns)
         for (int col = 0; col < 8; col ++)
         {
-            this.board[1][col] = new BoardSquare('P'); ; // pawns have 2 additional properties {movedOnce=false : used to allow +1/+2 advance for FIRST move}
+            this.board[1][col] = new BoardSquare('P'); // pawns have 2 additional properties {movedOnce=false : used to allow +1/+2 advance for FIRST move}
             //                                    {canBeCapEnPassant=false : set=true if pawn advances +2, function
             //to set=false for every pawn of oposite player at the end of current players turn.
             //seems naive, implement last anyway
@@ -50,7 +51,7 @@ public class ChessBoard {
         // white row 8 (pawns)
         for (int col = 0; col < 8; col ++)
         {
-            this.board[6][col] = new BoardSquare('p'); ; // as above
+            this.board[6][col] = new BoardSquare('p');  // as above
         }
 
         // white row 9
@@ -89,9 +90,9 @@ public class ChessBoard {
         this.player = player;
     }
 
-    public BoardSquare[][] getBoard()
-    {
+
+
+    public BoardSquare[][] getBoard() {
         return this.board;
     }
-
 }
