@@ -2,6 +2,7 @@ package chess.base;
 
 import chess.components.ChessBoard;
 import chess.components.FormedMove;
+import chess.view.Display;
 import chess.util.Evaluator;
 
 import java.io.BufferedReader;
@@ -33,6 +34,7 @@ public class Game {
     {
         ChessBoard c = new ChessBoard();
         Evaluator e = new Evaluator();
+        Display d = new Display(this);
 
         // create gui -> new Gui(this)
         // from gui: register a listener to game.c.getBoard() (when the object changes, update the gui)
